@@ -26,7 +26,7 @@
               :key="logo.alt + '-a'"
               :src="logo.src"
               :alt="logo.alt"
-              class="mx-6 h-10 w-auto brightness-0 invert opacity-60"
+              class="mx-6 h-12 w-auto brightness-0 invert opacity-60"
             />
             <img
               v-for="logo in techLogos"
