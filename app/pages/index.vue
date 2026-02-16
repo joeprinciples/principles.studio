@@ -3,7 +3,7 @@
     <!-- Hero -->
     <div class="relative isolate pt-14">
       <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
-        <div class="max-w-3xl grid gap-4">
+        <div class="max-w-4xl grid gap-4">
           <h1
             class="text-5xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
           >
@@ -184,7 +184,13 @@
                   :disabled="formStatus === 'sending'"
                   class="block w-full rounded-xl bg-teal-500 px-3.5 py-4 text-center text-lg font-bold text-black shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 transition disabled:opacity-50"
                 >
-                  {{ formStatus === 'sending' ? 'Sending...' : formStatus === 'sent' ? 'Sent!' : "Let's talk" }}
+                  {{
+                    formStatus === "sending"
+                      ? "Sending..."
+                      : formStatus === "sent"
+                      ? "Sent!"
+                      : "Let's talk"
+                  }}
                 </button>
               </div>
             </form>
