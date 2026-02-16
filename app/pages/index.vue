@@ -125,7 +125,7 @@
           <div
             class="sm:rounded-[2.5rem] rounded-2xl bg-[#0e0d17]/90 shadow-xl p-8 sm:p-10"
           >
-            <form action="#" method="POST">
+            <form @submit.prevent="handleSubmit">
               <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div class="sm:col-span-2">
                   <label
@@ -139,6 +139,7 @@
                       name="name"
                       id="name"
                       autocomplete="name"
+                      required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     />
                   </div>
@@ -155,6 +156,7 @@
                       name="email"
                       id="email"
                       autocomplete="email"
+                      required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     />
                   </div>
@@ -170,6 +172,7 @@
                       id="message"
                       name="message"
                       rows="4"
+                      required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     ></textarea>
                   </div>
@@ -178,9 +181,10 @@
               <div class="mt-10">
                 <button
                   type="submit"
-                  class="block w-full rounded-xl bg-teal-500 px-3.5 py-4 text-center text-lg font-bold text-black shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 transition"
+                  :disabled="formStatus === 'sending'"
+                  class="block w-full rounded-xl bg-teal-500 px-3.5 py-4 text-center text-lg font-bold text-black shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 transition disabled:opacity-50"
                 >
-                  Let's talk
+                  {{ formStatus === 'sending' ? 'Sending...' : formStatus === 'sent' ? 'Sent!' : "Let's talk" }}
                 </button>
               </div>
             </form>
@@ -224,6 +228,28 @@ import { Focus, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
 useHead({
   title: "first principles - Independent Product & Software Studio",
 });
+
+const formStatus = ref("idle");
+
+async function handleSubmit(e) {
+  formStatus.value = "sending";
+  const data = new FormData(e.target);
+  try {
+    const res = await fetch("https://formspree.io/f/mkovbjqz", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+    if (res.ok) {
+      formStatus.value = "sent";
+      e.target.reset();
+    } else {
+      formStatus.value = "idle";
+    }
+  } catch {
+    formStatus.value = "idle";
+  }
+}
 
 const techLogos = [
   { src: "/vuedotjs.svg", alt: "Vue.js" },
