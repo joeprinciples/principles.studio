@@ -71,6 +71,11 @@ export default defineNuxtConfig({
       ],
       script: [
         {
+          src: "https://cloud.umami.is/script.js",
+          defer: true,
+          "data-website-id": "eecb36d5-8141-41df-bd22-fa1ff0da2316",
+        },
+        {
           type: "application/ld+json",
           innerHTML: JSON.stringify({
             "@context": "https://schema.org",
