@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <div class="relative isolate pt-14">
-      <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
+      <div class="mx-auto max-w-7xl px-6 pt-32 pb-0 sm:pt-48 lg:px-8 lg:pt-56">
         <div class="max-w-4xl grid gap-4">
           <h1
             class="text-4xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
@@ -48,7 +48,7 @@
       data-aos-duration="600"
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl">
+        <div class="max-w-4xl">
           <h2
             class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
           >

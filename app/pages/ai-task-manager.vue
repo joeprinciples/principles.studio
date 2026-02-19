@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <div class="relative isolate pt-14">
-      <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
+      <div class="mx-auto max-w-7xl px-6 pt-32 pb-0 sm:pt-48 lg:px-8 lg:pt-56">
         <div class="max-w-4xl grid gap-4">
           <h1
             class="text-4xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
@@ -21,7 +21,7 @@
               href="https://marketplace.visualstudio.com/items?itemName=FirstPrinciples.ai-task-manager"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-sm text-white hover:bg-teal-500/20 transition"
+              class="inline-flex items-center rounded-lg bg-black px-6 py-3 text-lg font-semibold text-white hover:bg-teal-500/20 transition"
             >
               Available on VS Marketplace
             </a>
@@ -37,7 +37,7 @@
       data-aos-duration="600"
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-10">
           <figure v-for="shot in screenshots" :key="shot.src" class="max-w-[650px]">
             <img
               :src="shot.src"
@@ -45,7 +45,7 @@
               class="w-full rounded-2xl shadow-2xl"
               loading="lazy"
             />
-            <figcaption class="mt-3 text-sm not-italic text-white/75">
+            <figcaption class="mt-3 text-base not-italic text-white/75 sm:text-lg">
               {{ shot.caption }}
             </figcaption>
           </figure>
@@ -60,7 +60,7 @@
       data-aos-duration="600"
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl">
+        <div class="max-w-4xl">
           <h2
             class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
           >

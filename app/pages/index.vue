@@ -295,9 +295,9 @@ const products = [
     to: "/singlio",
   },
   {
-    name: "AI Task Manager.",
+    name: "VS Code Extensions.",
     description:
-      "A lightweight task management panel for VS Code, Cursor, and other editors. Track tasks across multiple projects using simple Markdown files.",
+      "Developer tools and editor extensions for managing projects and workflows.",
     icon: ListTodo,
     badge: "Learn more",
     to: "/ai-task-manager",
