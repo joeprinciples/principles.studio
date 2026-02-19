@@ -16,14 +16,22 @@
             editors. Track tasks across multiple projects using simple Markdown
             files — designed to work seamlessly with AI coding assistants.
           </p>
-          <div class="mt-4">
+          <div class="mt-4 flex flex-wrap gap-3">
             <a
               href="https://marketplace.visualstudio.com/items?itemName=FirstPrinciples.ai-task-manager"
               target="_blank"
               rel="noopener"
               class="inline-flex items-center rounded-full bg-black px-6 py-3 text-lg font-semibold text-white shadow-none hover:bg-teal-500/20 transition"
             >
-              Available on VS Marketplace
+              VS Code Marketplace
+            </a>
+            <a
+              href="https://open-vsx.org/extension/FirstPrinciples/ai-task-manager"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center rounded-full bg-black px-6 py-3 text-lg font-semibold text-white shadow-none hover:bg-teal-500/20 transition"
+            >
+              Open VSX (Cursor)
             </a>
           </div>
         </div>
@@ -150,7 +158,7 @@ const faqs = [
   {
     question: "Which editors are supported?",
     answer:
-      "AI Task Manager is available on the VS Code Marketplace and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions.",
+      "AI Task Manager is available on the VS Code Marketplace and Open VSX Registry, and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions.",
   },
   {
     question: "Is it free?",
@@ -229,7 +237,7 @@ useHead({
                 name: "Which editors are supported?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "AI Task Manager is available on the VS Code Marketplace and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions.",
+                  text: "AI Task Manager is available on the VS Code Marketplace and Open VSX Registry, and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions.",
                 },
               },
               {
