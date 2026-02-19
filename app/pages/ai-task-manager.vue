@@ -21,7 +21,7 @@
               href="https://marketplace.visualstudio.com/items?itemName=FirstPrinciples.ai-task-manager"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center rounded-lg bg-black px-6 py-3 text-lg font-semibold text-white hover:bg-teal-500/20 transition"
+              class="inline-flex items-center rounded-full bg-black px-6 py-3 text-lg font-semibold text-white shadow-none hover:bg-teal-500/20 transition"
             >
               Available on VS Marketplace
             </a>
@@ -38,7 +38,7 @@
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-10">
-          <figure v-for="shot in screenshots" :key="shot.src" class="max-w-[650px]">
+          <figure v-for="shot in screenshots" :key="shot.src" class="max-w-[890px]">
             <img
               :src="shot.src"
               :alt="shot.caption"
