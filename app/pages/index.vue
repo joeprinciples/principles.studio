@@ -5,12 +5,12 @@
       <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
         <div class="max-w-4xl grid gap-4">
           <h1
-            class="text-5xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
+            class="text-4xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
           >
             Designing & developing user-centred solutions
           </h1>
           <p
-            class="max-w-2xl text-xl/8 font-regular text-pretty text-white/80 sm:text-2xl/9"
+            class="max-w-2xl text-lg/7 font-regular text-pretty text-white/80 sm:text-2xl/9"
           >
             First Principles is an independent studio based in Nottingham,
             working with clients across the UK. We focus on user-centred
@@ -55,12 +55,12 @@
           <div class="lg:pr-4 lg:pt-4">
             <div class="max-w-lg grid gap-4">
               <h2
-                class="mt-2 text-pretty text-5xl font-bold tracking-tight text-white sm:text-5xl"
+                class="mt-2 text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
               >
                 Products
               </h2>
               <p
-                class="max-w-2xl text-xl font-regular text-pretty text-white/80 sm:text-2xl/9"
+                class="max-w-2xl text-lg font-regular text-pretty text-white/80 sm:text-2xl/9"
               >
                 We design and build web, mobile, and desktop applications
                 in-house. The focus is on simple, usable software that addresses
@@ -110,12 +110,12 @@
     <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
       <div class="mx-auto max-w-7xl px-6 lg:px-8 grid gap-4">
         <h2
-          class="text-pretty text-5xl font-bold tracking-tight text-white sm:text-5xl"
+          class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
         >
           Get in touch
         </h2>
         <p
-          class="max-w-2xl text-xl font-regular text-pretty text-white/80 sm:text-2xl/9"
+          class="max-w-2xl text-lg font-regular text-pretty text-white/80 sm:text-2xl/9"
         >
           If you're interested in working with us, please get in touch and we'll
           get back to you as soon as possible.
