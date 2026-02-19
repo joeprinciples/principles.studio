@@ -80,12 +80,27 @@
                       class="absolute left-1 top-1 size-6 text-teal-400"
                       aria-hidden="true"
                     />
-                    {{ product.name }}
+                    <NuxtLink
+                      v-if="product.to"
+                      :to="product.to"
+                      class="hover:text-teal-400 transition"
+                    >
+                      {{ product.name }}
+                    </NuxtLink>
+                    <template v-else>{{ product.name }}</template>
                   </dt>
                   {{ " " }}
                   <dd class="inline">{{ product.description }}</dd>
                   <dd v-if="product.badge" class="mt-4">
+                    <NuxtLink
+                      v-if="product.to"
+                      :to="product.to"
+                      class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-xs text-white hover:bg-teal-500/20 transition"
+                    >
+                      {{ product.badge }}
+                    </NuxtLink>
                     <span
+                      v-else
                       class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-xs text-white"
                     >
                       {{ product.badge }}
@@ -229,7 +244,7 @@
 </template>
 
 <script setup>
-import { Focus, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
+import { Focus, ListTodo, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
 
 useHead({
   title: "first principles - Independent Product & Software Studio",
@@ -274,13 +289,23 @@ const products = [
   {
     name: "Singlio.",
     description:
-      "A focus training app designed to help strengthen executive function. Centres on deliberate practice, minimal distraction, and measurable progress, helping users train attention, impulse control, and cognitive discipline over time.",
+      "A focus training app designed to help strengthen executive function. Centres on deliberate practice, minimal distraction, and measurable progress.",
     icon: Focus,
-    badge: "Coming soon",
+    badge: "Learn more",
+    to: "/singlio",
+  },
+  {
+    name: "AI Task Manager.",
+    description:
+      "A lightweight task management panel for VS Code, Cursor, and other editors. Track tasks across multiple projects using simple Markdown files.",
+    icon: ListTodo,
+    badge: "Learn more",
+    to: "/ai-task-manager",
   },
   {
     name: "More to come.",
-    description: "We'll be building more tools and applications in the future.",
+    description:
+      "We're always working on new tools and products. Stay tuned.",
     icon: Plus,
   },
 ];
