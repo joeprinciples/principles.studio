@@ -13,7 +13,7 @@
             class="max-w-2xl text-lg/7 font-regular text-pretty text-white/80 sm:text-2xl/9"
           >
             A free Chrome extension for viewing image metadata, detecting
-            AI-generated images, extracting color palettes, and editing photos —
+            AI-generated images, extracting color palettes, and editing photos -
             all from your browser's side panel.
           </p>
           <div class="mt-4 flex flex-wrap gap-3">
@@ -114,7 +114,7 @@ const screenshots = [
   {
     src: "/screenshots/image-workbench/1.jpg",
     caption:
-      "View EXIF data, AI generation metadata, and C2PA Content Credentials for any image — right from your browser.",
+      "View EXIF data, AI generation metadata, and C2PA Content Credentials for any image - right from your browser.",
   },
   {
     src: "/screenshots/image-workbench/2.jpg",
@@ -129,7 +129,7 @@ const screenshots = [
   {
     src: "/screenshots/image-workbench/4.jpg",
     caption:
-      "Crop, rotate, flip, scale, and sharpen images with a non-destructive editor — undo any step.",
+      "Crop, rotate, flip, scale, and sharpen images with a non-destructive editor - undo any step.",
   },
   {
     src: "/screenshots/image-workbench/5.jpg",

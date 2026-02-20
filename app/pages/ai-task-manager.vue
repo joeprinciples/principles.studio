@@ -14,7 +14,7 @@
           >
             A lightweight task management panel for VS Code, Cursor, and other
             editors. Track tasks across multiple projects using simple Markdown
-            files — designed to work seamlessly with AI coding assistants.
+            files - designed to work seamlessly with AI coding assistants.
           </p>
           <div class="mt-4 flex flex-wrap gap-3">
             <a
@@ -39,21 +39,23 @@
     </div>
 
     <!-- Screenshots -->
-    <section
-      class="py-24 sm:py-32"
-      data-aos="fade-up"
-      data-aos-duration="600"
-    >
+    <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-10">
-          <figure v-for="shot in screenshots" :key="shot.src" class="max-w-[890px]">
+          <figure
+            v-for="shot in screenshots"
+            :key="shot.src"
+            class="max-w-[890px]"
+          >
             <img
               :src="shot.src"
               :alt="shot.caption"
               class="w-full rounded-2xl shadow-2xl"
               loading="lazy"
             />
-            <figcaption class="mt-3 text-base not-italic text-white/75 sm:text-lg">
+            <figcaption
+              class="mt-3 text-base not-italic text-white/75 sm:text-lg"
+            >
               {{ shot.caption }}
             </figcaption>
           </figure>
@@ -62,11 +64,7 @@
     </section>
 
     <!-- FAQ -->
-    <section
-      class="py-24 sm:py-32"
-      data-aos="fade-up"
-      data-aos-duration="600"
-    >
+    <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-4xl">
           <h2
@@ -117,19 +115,23 @@ import { Plus, Minus } from "lucide-vue-next";
 const screenshots = [
   {
     src: "/screenshots/ai-task-manager/1.png",
-    caption: "Tasks appear in a dedicated sidebar panel, giving you an overview of all your projects at a glance.",
+    caption:
+      "Tasks appear in a dedicated sidebar panel, giving you an overview of all your projects at a glance.",
   },
   {
     src: "/screenshots/ai-task-manager/2.png",
-    caption: "Select a project to expand its full task list — with statuses, priorities, and timestamps.",
+    caption:
+      "Select a project to expand its full task list - with statuses, priorities, and timestamps.",
   },
   {
     src: "/screenshots/ai-task-manager/3.png",
-    caption: "Right-click any task to change its status, update its priority, or remove it.",
+    caption:
+      "Right-click any task to change its status, update its priority, or remove it.",
   },
   {
     src: "/screenshots/ai-task-manager/4.png",
-    caption: "All task data lives in a single Markdown file per project — easy to read, edit, and version control.",
+    caption:
+      "All task data lives in a single Markdown file per project - easy to read, edit, and version control.",
   },
 ];
 
@@ -162,8 +164,7 @@ const faqs = [
   },
   {
     question: "Is it free?",
-    answer:
-      "Yes. AI Task Manager is completely free and open source.",
+    answer: "Yes. AI Task Manager is completely free and open source.",
   },
   {
     question: "Where is my data stored?",
