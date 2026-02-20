@@ -111,9 +111,9 @@
             <p class="mt-3">
               If you have questions about this privacy policy, contact us at
               <a
-                href="mailto:hello@firstprinciples.studio"
+                href="mailto:joe@principles.studio"
                 class="text-teal-400 hover:text-teal-300 underline"
-              >hello@firstprinciples.studio</a>.
+              >joe@principles.studio</a>.
             </p>
           </section>
         </div>

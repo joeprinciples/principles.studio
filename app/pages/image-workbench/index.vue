@@ -25,6 +25,12 @@
             >
               Chrome Web Store
             </a>
+            <NuxtLink
+              to="/image-workbench/privacy"
+              class="inline-flex items-center rounded-full bg-black px-6 py-3 text-lg font-semibold text-white shadow-none hover:bg-teal-500/20 transition"
+            >
+              Privacy Policy
+            </NuxtLink>
           </div>
         </div>
       </div>
