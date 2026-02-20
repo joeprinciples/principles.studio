@@ -5,7 +5,7 @@
         <h1
           class="text-4xl leading-tight font-bold tracking-tight text-white sm:text-5xl"
         >
-          Image Workbench — Privacy Policy
+          Image Workbench - Privacy Policy
         </h1>
         <p class="mt-4 text-sm text-white/50">Last updated: February 20, 2025</p>
 
@@ -30,8 +30,8 @@
               non-destructive edits. When you right-click an image in your
               browser, the extension fetches that image directly from its
               original source URL into the side panel, using your browser,
-              without routing it through any servers. All processing — metadata
-              parsing, palette extraction, and image editing — happens locally
+              without routing it through any servers. All processing - metadata
+              parsing, palette extraction, and image editing - happens locally
               in your browser. No image data is sent to our servers or any
               third-party service.
             </p>
@@ -44,24 +44,24 @@
             <ul class="mt-3 list-disc pl-5 space-y-2">
               <li>
                 <strong class="text-white">Host permissions (all URLs)</strong>
-                — Required so the extension can fetch the image you right-clicked,
+                - Required so the extension can fetch the image you right-clicked,
                 regardless of which website it is hosted on. The extension only
                 fetches the specific image you select; it does not read or
                 modify page content.
               </li>
               <li>
                 <strong class="text-white">Side panel</strong>
-                — Used to display the Image Workbench interface alongside your
+                - Used to display the Image Workbench interface alongside your
                 browser tabs.
               </li>
               <li>
                 <strong class="text-white">Context menus</strong>
-                — Adds the "Open in Image Workbench" option when you right-click
+                - Adds the "Open in Image Workbench" option when you right-click
                 an image.
               </li>
               <li>
                 <strong class="text-white">Storage (session only)</strong>
-                — Temporarily holds the URL of the image you selected so the
+                - Temporarily holds the URL of the image you selected so the
                 side panel can load it. This data is cleared when you close
                 your browser.
               </li>
@@ -124,12 +124,12 @@
 
 <script setup>
 useHead({
-  title: "Privacy Policy — Image Workbench | first principles",
+  title: "Privacy Policy - Image Workbench | first principles",
   meta: [
     {
       name: "description",
       content:
-        "Privacy policy for Image Workbench, a Chrome extension for viewing image metadata and editing photos. No data is collected — everything runs locally in your browser.",
+        "Privacy policy for Image Workbench, a Chrome extension for viewing image metadata and editing photos. No data is collected - everything runs locally in your browser.",
     },
   ],
 });
