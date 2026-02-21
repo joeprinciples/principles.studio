@@ -183,85 +183,21 @@ useHead({
     },
   ],
   script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            name: "AI Task Manager",
-            description:
-              "A lightweight task management panel for VS Code, Cursor, and other editors. Track tasks across multiple projects using simple Markdown files designed to work seamlessly with AI coding assistants.",
-            applicationCategory: "DeveloperApplication",
-            operatingSystem: "Windows, macOS, Linux",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "GBP",
-            },
-            author: {
-              "@type": "Organization",
-              name: "First Principles Studio Ltd",
-              url: "https://principles.studio",
-            },
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What is AI Task Manager?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "AI Task Manager is a VS Code extension that gives you a visual task panel powered by simple Markdown files. It\u2019s designed to work alongside AI coding assistants like Claude, GPT, and Copilot \u2014 they can read and update your tasks as they work.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How does it work with AI assistants?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Tasks are stored as Markdown files with JSON frontmatter in a ~/.ai-tasks/ directory. AI assistants can read these files to understand what you\u2019re working on, update task statuses as they complete work, and add new tasks when they discover follow-up items.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What\u2019s the file format?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Each project gets a single Markdown file with JSON frontmatter containing the project name, path, and an array of tasks. Each task has an ID, title, status, priority, and optional fields like grep keywords and related documents.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Which editors are supported?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "AI Task Manager is available on the VS Code Marketplace and Open VSX Registry, and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is it free?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. AI Task Manager is completely free and open source.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Where is my data stored?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "All task data is stored locally in Markdown files on your machine. There are no accounts, no cloud sync, and no telemetry. You own your data completely.",
-                },
-              },
-            ],
-          },
-        ],
-      }),
-    },
+    useProductSchema({
+      name: "AI Task Manager",
+      description:
+        "A lightweight task management panel for VS Code, Cursor, and other editors. Track tasks across multiple projects using simple Markdown files designed to work seamlessly with AI coding assistants.",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Windows, macOS, Linux",
+      faqs: [
+        { question: "What is AI Task Manager?", answer: "AI Task Manager is a VS Code extension that gives you a visual task panel powered by simple Markdown files. It\u2019s designed to work alongside AI coding assistants like Claude, GPT, and Copilot \u2014 they can read and update your tasks as they work." },
+        { question: "How does it work with AI assistants?", answer: "Tasks are stored as Markdown files with JSON frontmatter in a ~/.ai-tasks/ directory. AI assistants can read these files to understand what you\u2019re working on, update task statuses as they complete work, and add new tasks when they discover follow-up items." },
+        { question: "What\u2019s the file format?", answer: "Each project gets a single Markdown file with JSON frontmatter containing the project name, path, and an array of tasks. Each task has an ID, title, status, priority, and optional fields like grep keywords and related documents." },
+        { question: "Which editors are supported?", answer: "AI Task Manager is available on the VS Code Marketplace and Open VSX Registry, and works in VS Code, Cursor, Windsurf, and any editor that supports VS Code extensions." },
+        { question: "Is it free?", answer: "Yes. AI Task Manager is completely free and open source." },
+        { question: "Where is my data stored?", answer: "All task data is stored locally in Markdown files on your machine. There are no accounts, no cloud sync, and no telemetry. You own your data completely." },
+      ],
+    }),
   ],
 });
 </script>

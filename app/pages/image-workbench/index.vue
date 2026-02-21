@@ -187,85 +187,21 @@ useHead({
     },
   ],
   script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            name: "Image Workbench",
-            description:
-              "A free Chrome extension for viewing image metadata, detecting AI-generated images, extracting color palettes, and editing photos. Reads EXIF, IPTC, XMP, and C2PA Content Credentials from any image.",
-            applicationCategory: "MultimediaApplication",
-            operatingSystem: "Windows, macOS, Linux, ChromeOS",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "GBP",
-            },
-            author: {
-              "@type": "Organization",
-              name: "First Principles Studio Ltd",
-              url: "https://principles.studio",
-            },
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Can you tell if an image is AI-generated?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Sometimes, yes. Many AI generators \u2014 including ChatGPT, DALL\u00B7E, Adobe Firefly, and Midjourney \u2014 embed metadata that identifies the image as AI-generated. This can include C2PA Content Credentials, which record the creator tool, model used, and a digital signature chain. Image Workbench reads this data automatically and displays it in a clear, readable format. However, not all AI tools embed metadata, and metadata can be stripped when images are shared on social media or messaging apps.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do I strip metadata from an image?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Open any image in Image Workbench, go to the Metadata tab, and click the Strip button. This removes all EXIF, IPTC, XMP, and C2PA data from the image, giving you a clean file with no embedded information. The stripped image can then be downloaded directly.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is metadata in an image?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Image metadata is hidden information embedded inside a photo file. EXIF data records camera settings like aperture, shutter speed, ISO, and sometimes GPS coordinates. IPTC and XMP fields store copyright, captions, and keywords. C2PA Content Credentials are a newer standard that records the full creation history of an image \u2014 which tool made it, what edits were applied, and whether AI was involved.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is Image Workbench?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Image Workbench is a free Chrome extension that opens as a browser side panel. Right-click any image on the web to inspect its metadata, extract colors, or edit it. It handles EXIF, IPTC, XMP, and C2PA parsing, supports AI-specific metadata from tools like Stable Diffusion, ComfyUI, and Midjourney, and includes a color picker, palette extractor, and a non-destructive image editor.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Which AI generators does it detect?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Image Workbench can identify metadata from ChatGPT/DALL\u00B7E, Adobe Firefly, Midjourney, Stable Diffusion (A1111/Forge), ComfyUI, InvokeAI, Fooocus, SwarmUI, EasyDiffusion, Draw Things, and other tools that embed C2PA Content Credentials or generation parameters.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is it free?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Image Workbench is completely free to use. There are no accounts, no subscriptions, and no data collection. Everything runs locally in your browser.",
-                },
-              },
-            ],
-          },
-        ],
-      }),
-    },
+    useProductSchema({
+      name: "Image Workbench",
+      description:
+        "A free Chrome extension for viewing image metadata, detecting AI-generated images, extracting color palettes, and editing photos. Reads EXIF, IPTC, XMP, and C2PA Content Credentials from any image.",
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Windows, macOS, Linux, ChromeOS",
+      faqs: [
+        { question: "Can you tell if an image is AI-generated?", answer: "Sometimes, yes. Many AI generators \u2014 including ChatGPT, DALL\u00B7E, Adobe Firefly, and Midjourney \u2014 embed metadata that identifies the image as AI-generated. This can include C2PA Content Credentials, which record the creator tool, model used, and a digital signature chain. Image Workbench reads this data automatically and displays it in a clear, readable format. However, not all AI tools embed metadata, and metadata can be stripped when images are shared on social media or messaging apps." },
+        { question: "How do I strip metadata from an image?", answer: "Open any image in Image Workbench, go to the Metadata tab, and click the Strip button. This removes all EXIF, IPTC, XMP, and C2PA data from the image, giving you a clean file with no embedded information. The stripped image can then be downloaded directly." },
+        { question: "What is metadata in an image?", answer: "Image metadata is hidden information embedded inside a photo file. EXIF data records camera settings like aperture, shutter speed, ISO, and sometimes GPS coordinates. IPTC and XMP fields store copyright, captions, and keywords. C2PA Content Credentials are a newer standard that records the full creation history of an image \u2014 which tool made it, what edits were applied, and whether AI was involved." },
+        { question: "What is Image Workbench?", answer: "Image Workbench is a free Chrome extension that opens as a browser side panel. Right-click any image on the web to inspect its metadata, extract colors, or edit it. It handles EXIF, IPTC, XMP, and C2PA parsing, supports AI-specific metadata from tools like Stable Diffusion, ComfyUI, and Midjourney, and includes a color picker, palette extractor, and a non-destructive image editor." },
+        { question: "Which AI generators does it detect?", answer: "Image Workbench can identify metadata from ChatGPT/DALL\u00B7E, Adobe Firefly, Midjourney, Stable Diffusion (A1111/Forge), ComfyUI, InvokeAI, Fooocus, SwarmUI, EasyDiffusion, Draw Things, and other tools that embed C2PA Content Credentials or generation parameters." },
+        { question: "Is it free?", answer: "Yes. Image Workbench is completely free to use. There are no accounts, no subscriptions, and no data collection. Everything runs locally in your browser." },
+      ],
+    }),
   ],
 });
 </script>

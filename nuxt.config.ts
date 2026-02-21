@@ -1,3 +1,5 @@
+import { useOrganizationSchema } from "./app/composables/useSchema";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -78,27 +80,7 @@ export default defineNuxtConfig({
           defer: true,
           "data-website-id": "eecb36d5-8141-41df-bd22-fa1ff0da2316",
         },
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "First Principles",
-            url: "https://principles.studio",
-            logo: "https://principles.studio/fp-logo.png",
-            description:
-              "Independent product and software studio based in Nottingham, working with clients across the UK. User-centred design and development.",
-            founder: {
-              "@type": "Person",
-              name: "Joseph Coulam",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Nottingham",
-              addressCountry: "GB",
-            },
-          }),
-        },
+        useOrganizationSchema(),
       ],
     },
   },

@@ -154,86 +154,22 @@ useHead({
     },
   ],
   script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            name: "Singlio",
-            description:
-              "A focus training app designed to help strengthen executive function through deliberate practice, minimal distraction, and measurable progress.",
-            applicationCategory: "HealthApplication",
-            operatingSystem: "Android, iOS",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "GBP",
-              availability: "https://schema.org/PreOrder",
-            },
-            author: {
-              "@type": "Organization",
-              name: "First Principles Studio Ltd",
-              url: "https://principles.studio",
-            },
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What is Singlio?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Singlio is a focus training app that helps you understand and improve your attention. Start a session, tap the screen when you get distracted, and get a detailed focus score showing where your attention held and where it slipped.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How does the scoring work?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Your focus score (0\u2013100) is calculated using a multi-factor algorithm that considers distraction clusters, recovery time between interruptions, flow state bonuses, consistency, and your longest uninterrupted streak.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is my data private?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. All your data stays on your device. Singlio has no accounts, no servers, and no tracking. You can delete everything at any time from within the app.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is Singlio free?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Singlio is free on Android. The iOS version is available as a one-time purchase.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Does Singlio work offline?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Singlio works entirely offline. No internet connection is needed to run sessions, track progress, or view your history.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What are flow states?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Flow states are periods of deep, uninterrupted focus. Singlio detects three tiers: Entry flow (10+ minutes uninterrupted), Sustained flow (15+ minutes), and Deep flow (23+ minutes). Each tier earns increasing bonus points on your score.",
-                },
-              },
-            ],
-          },
-        ],
-      }),
-    },
+    useProductSchema({
+      name: "Singlio",
+      description:
+        "A focus training app designed to help strengthen executive function through deliberate practice, minimal distraction, and measurable progress.",
+      applicationCategory: "HealthApplication",
+      operatingSystem: "Android, iOS",
+      availability: "https://schema.org/PreOrder",
+      faqs: [
+        { question: "What is Singlio?", answer: "Singlio is a focus training app that helps you understand and improve your attention. Start a session, tap the screen when you get distracted, and get a detailed focus score showing where your attention held and where it slipped." },
+        { question: "How does the scoring work?", answer: "Your focus score (0\u2013100) is calculated using a multi-factor algorithm that considers distraction clusters, recovery time between interruptions, flow state bonuses, consistency, and your longest uninterrupted streak." },
+        { question: "Is my data private?", answer: "Yes. All your data stays on your device. Singlio has no accounts, no servers, and no tracking. You can delete everything at any time from within the app." },
+        { question: "Is Singlio free?", answer: "Singlio is free on Android. The iOS version is available as a one-time purchase." },
+        { question: "Does Singlio work offline?", answer: "Yes. Singlio works entirely offline. No internet connection is needed to run sessions, track progress, or view your history." },
+        { question: "What are flow states?", answer: "Flow states are periods of deep, uninterrupted focus. Singlio detects three tiers: Entry flow (10+ minutes uninterrupted), Sustained flow (15+ minutes), and Deep flow (23+ minutes). Each tier earns increasing bonus points on your score." },
+      ],
+    }),
   ],
 });
 </script>
