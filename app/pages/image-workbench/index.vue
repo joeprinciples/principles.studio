@@ -37,7 +37,7 @@
     </div>
 
     <!-- Screenshots -->
-    <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
+    <section class="py-24 sm:py-32" v-scroll-reveal>
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-10">
           <figure
@@ -62,7 +62,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
+    <section class="py-24 sm:py-32" v-scroll-reveal>
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-4xl">
           <h2

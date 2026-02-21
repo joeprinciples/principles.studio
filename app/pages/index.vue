@@ -18,9 +18,10 @@
           </p>
         </div>
         <div
+          ref="marqueeRef"
           class="mt-16 max-w-3xl overflow-hidden [--marquee-duration:30s] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
         >
-          <div class="flex w-max animate-marquee">
+          <div class="flex w-max animate-marquee will-change-transform" :class="{ 'marquee-paused': marqueePaused }">
             <img
               v-for="logo in techLogos"
               :key="logo.alt + '-a'"
@@ -45,8 +46,7 @@
     <section
       id="products"
       class="overflow-hidden py-24 sm:py-32"
-      data-aos="fade-up"
-      data-aos-duration="600"
+      v-scroll-reveal
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div
@@ -115,6 +115,8 @@
               src="/singlio.png"
               alt="Singlio - Focus training app"
               class="w-full rounded-3xl"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -122,7 +124,7 @@
     </section>
 
     <!-- Client Work Section -->
-    <section class="py-24 sm:py-32" data-aos="fade-up" data-aos-duration="600">
+    <section class="py-24 sm:py-32" v-scroll-reveal>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 grid gap-4">
         <h2
           class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
@@ -248,6 +250,25 @@ import { Focus, ListTodo, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-
 
 useHead({
   title: "first principles - Independent Product & Software Studio",
+});
+
+const marqueeRef = ref(null);
+const marqueePaused = ref(false);
+
+let marqueeObserver = null;
+
+onMounted(() => {
+  if (marqueeRef.value) {
+    marqueeObserver = new IntersectionObserver(
+      ([entry]) => { marqueePaused.value = !entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    marqueeObserver.observe(marqueeRef.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  marqueeObserver?.disconnect();
 });
 
 const formStatus = ref("idle");

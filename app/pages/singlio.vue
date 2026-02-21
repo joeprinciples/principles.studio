@@ -30,8 +30,7 @@
     <!-- Screenshots -->
     <section
       class="py-24 sm:py-32 overflow-hidden"
-      data-aos="fade-up"
-      data-aos-duration="600"
+      v-scroll-reveal
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <AppScreenshotSlider
@@ -44,8 +43,7 @@
     <!-- FAQ -->
     <section
       class="py-24 sm:py-32"
-      data-aos="fade-up"
-      data-aos-duration="600"
+      v-scroll-reveal
     >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-4xl">
