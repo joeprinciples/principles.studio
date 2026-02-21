@@ -207,7 +207,7 @@ useHead({
             author: {
               "@type": "Organization",
               name: "First Principles Studio Ltd",
-              url: "https://firstprinciples.studio",
+              url: "https://principles.studio",
             },
           },
           {

@@ -90,14 +90,13 @@ export default defineNuxtConfig({
               "Independent product and software studio based in Nottingham, working with clients across the UK. User-centred design and development.",
             founder: {
               "@type": "Person",
-              name: "Joe Coulam",
+              name: "Joseph Coulam",
             },
             address: {
               "@type": "PostalAddress",
               addressLocality: "Nottingham",
               addressCountry: "GB",
             },
-            sameAs: [],
           }),
         },
       ],
