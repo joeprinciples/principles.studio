@@ -246,7 +246,7 @@
 </template>
 
 <script setup>
-import { Focus, ListTodo, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
+import { Focus, ListTodo, FolderTree, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
 
 useHead({
   title: "first principles - Independent Product & Software Studio",
@@ -316,12 +316,20 @@ const products = [
     to: "/singlio",
   },
   {
-    name: "VS Code Extensions.",
+    name: "AI Task Manager.",
     description:
-      "Developer tools and editor extensions for managing projects and workflows.",
+      "A lightweight task management panel for VS Code. Track tasks across multiple projects using Markdown files designed to work with AI coding assistants.",
     icon: ListTodo,
     badge: "Learn more",
     to: "/ai-task-manager",
+  },
+  {
+    name: "AI Context Docs.",
+    description:
+      "A VS Code extension that maintains a .context/ folder mapping your codebase for AI assistants. Auto-scans, tracks staleness, and works with any AI tool.",
+    icon: FolderTree,
+    badge: "Learn more",
+    to: "/ai-context-docs",
   },
   {
     name: "More to come.",
