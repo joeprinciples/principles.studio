@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
   site: {
     url: "https://principles.studio",
+    trailingSlash: true,
   },
   tailwindcss: {
     cssPath: "~/assets/css/main.css",
@@ -41,7 +42,6 @@ export default defineNuxtConfig({
             "Independent product and software studio based in Nottingham, working with clients across the UK. User-centred design and development.",
         },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://principles.studio" },
         {
           property: "og:image",
           content: "https://principles.studio/og-image.png",
@@ -68,10 +68,6 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/svg+xml",
           href: "/favicon.svg",
-        },
-        {
-          rel: "canonical",
-          href: "https://principles.studio",
         },
       ],
       script: [
