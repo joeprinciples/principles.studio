@@ -2,3 +2,6 @@ User-Agent: *
 Disallow:
 
 Sitemap: https://principles.studio/sitemap.xml
+
+# Private client reports (also StatiCrypt-encrypted)
+Disallow: /clients/
