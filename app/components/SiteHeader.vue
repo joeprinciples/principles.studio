@@ -18,6 +18,14 @@
           </span>
         </NuxtLink>
       </div>
+      <div class="flex items-center">
+        <NuxtLink
+          to="/clients"
+          class="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-zinc-200 transition hover:border-teal-400/50 hover:text-teal-300"
+        >
+          Clients
+        </NuxtLink>
+      </div>
     </nav>
   </header>
 </template>

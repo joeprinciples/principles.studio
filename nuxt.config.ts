@@ -4,7 +4,7 @@ import { useOrganizationSchema } from "./app/composables/useSchema";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap", "nuxt-auth-utils"],
   site: {
     url: "https://principles.studio",
     trailingSlash: true,
@@ -13,8 +13,38 @@ export default defineNuxtConfig({
     cssPath: "~/assets/css/main.css",
   },
   ssr: true,
+  // Deployed as a Node server on Coolify/Hetzner (see DEPLOY.md). Marketing pages
+  // are prerendered at build time and served as static HTML; the server exists
+  // only for the gated client area (/clients/*) and the admin publish API.
   nitro: {
-    preset: "static",
+    preset: "node-server",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+      // The client area is dynamic + auth-gated — never prerender it.
+      ignore: ["/clients"],
+    },
+  },
+  routeRules: {
+    // Gated, per-request, never cached at the edge.
+    "/clients/**": {
+      ssr: true,
+      prerender: false,
+      headers: { "cache-control": "no-store" },
+    },
+  },
+  runtimeConfig: {
+    // Long random secret guarding /api/admin/* (publish + client management).
+    // Admin endpoints fail closed (401) until this is set. Override with NUXT_ADMIN_TOKEN.
+    adminToken: "",
+    // Absolute path to the persistent volume holding client reports + clients.json.
+    // Empty here → resolved to ./.data for local dev. In prod set NUXT_CLIENT_DATA_DIR=/data.
+    clientDataDir: "",
+    // nuxt-auth-utils reads NUXT_SESSION_PASSWORD from env automatically.
+    session: {
+      // Client stays signed in for 30 days.
+      maxAge: 60 * 60 * 24 * 30,
+    },
   },
   app: {
     head: {
