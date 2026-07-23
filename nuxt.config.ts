@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "first principles - Independent Product & Software Studio",
+      title: "first principles - UX-first Product & Software Studio",
       htmlAttrs: {
         lang: "en",
         class: "dark",
@@ -59,17 +59,17 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "first principles is an independent product and software studio based in Nottingham. Building focused, useful software from first principles.",
+            "UX-first product and software studio working with businesses across the UK. I start from what your users actually need, then design and build up from there: brand, websites, campaigns and custom software.",
         },
         // Open Graph
         {
           property: "og:title",
-          content: "first principles - Independent Product & Software Studio",
+          content: "first principles - UX-first Product & Software Studio",
         },
         {
           property: "og:description",
           content:
-            "Independent product and software studio based in Nottingham, working with clients across the UK. User-centred design and development.",
+            "I start from what your users actually need, then design and build up from there: brand, websites, campaigns and the custom software underneath.",
         },
         { property: "og:type", content: "website" },
         {
@@ -81,12 +81,12 @@ export default defineNuxtConfig({
         { name: "twitter:card", content: "summary_large_image" },
         {
           name: "twitter:title",
-          content: "first principles - Independent Product & Software Studio",
+          content: "first principles - UX-first Product & Software Studio",
         },
         {
           name: "twitter:description",
           content:
-            "Independent product and software studio based in Nottingham. User-centred design and development.",
+            "I start from what your users actually need, then design and build up from there. UX-first product and software studio.",
         },
         {
           name: "twitter:image",

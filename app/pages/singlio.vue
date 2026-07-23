@@ -16,11 +16,28 @@
             Start a session, tap when you get distracted, and get a detailed
             score showing exactly where your attention held and where it slipped.
           </p>
-          <div class="mt-4">
-            <span
-              class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-sm text-white"
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.singlio.app&hl=en"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-5 py-3 text-base font-bold text-zinc-950 transition hover:bg-teal-400"
             >
-              Coming soon
+              <Smartphone class="size-5" aria-hidden="true" />
+              Get it on Google Play
+            </a>
+            <a
+              href="https://singl.io"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-base font-semibold text-white transition hover:border-teal-400/60 hover:text-teal-300"
+            >
+              Visit singl.io
+              <ExternalLink class="size-4" aria-hidden="true" />
+            </a>
+            <span class="inline-flex items-center gap-2 text-sm text-white/60">
+              <span class="h-2 w-2 rounded-full bg-teal-400"></span>
+              Live on Android · iOS coming soon
             </span>
           </div>
         </div>
@@ -90,7 +107,7 @@
 </template>
 
 <script setup>
-import { Plus, Minus } from "lucide-vue-next";
+import { Plus, Minus, Smartphone, ExternalLink } from "lucide-vue-next";
 
 const screenshots = [
   "/screenshots/singlio/1.jpeg",
@@ -160,7 +177,7 @@ useHead({
         "A focus training app designed to help strengthen executive function through deliberate practice, minimal distraction, and measurable progress.",
       applicationCategory: "HealthApplication",
       operatingSystem: "Android, iOS",
-      availability: "https://schema.org/PreOrder",
+      availability: "https://schema.org/InStock",
       faqs: [
         { question: "What is Singlio?", answer: "Singlio is a focus training app that helps you understand and improve your attention. Start a session, tap the screen when you get distracted, and get a detailed focus score showing where your attention held and where it slipped." },
         { question: "How does the scoring work?", answer: "Your focus score (0\u2013100) is calculated using a multi-factor algorithm that considers distraction clusters, recovery time between interruptions, flow state bonuses, consistency, and your longest uninterrupted streak." },

@@ -2,20 +2,38 @@
   <div>
     <!-- Hero -->
     <div class="relative isolate pt-14">
-      <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
-        <div class="max-w-4xl grid gap-4">
+      <div class="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8 lg:py-48">
+        <div class="max-w-4xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-teal-400">
+            UX from first principles
+          </p>
           <h1
-            class="text-4xl leading-tight font-bold tracking-tight text-balance text-white sm:text-7xl"
+            class="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-balance text-white sm:text-7xl"
           >
-            Designing & developing user-centred solutions
+            What do your users actually need?
           </h1>
           <p
-            class="max-w-2xl text-lg/7 font-regular text-pretty text-white/80 sm:text-2xl/9"
+            class="mt-8 max-w-2xl text-lg/8 font-regular text-pretty text-white/80 sm:text-xl/9"
           >
-            First Principles is an independent studio based in Nottingham,
-            working with clients across the UK. We focus on user-centred
-            projects that aim to solve real problems clearly and thoughtfully.
+            That's the only question I start from. I work out who your customers
+            are and how they really behave, then design and build up from there:
+            the brand, the site, the software, whatever the need calls for. One
+            studio, one point of accountability.
           </p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              class="rounded-xl bg-teal-500 px-6 py-3.5 text-base font-bold text-zinc-950 transition hover:bg-teal-400"
+            >
+              Start a project
+            </a>
+            <NuxtLink
+              to="/work"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 text-base font-semibold text-white transition hover:border-teal-400/50 hover:text-teal-300"
+            >
+              See the work <ArrowRight class="size-4" />
+            </NuxtLink>
+          </div>
         </div>
         <div
           ref="marqueeRef"
@@ -42,154 +60,106 @@
       </div>
     </div>
 
-    <!-- Products Section -->
-    <section
-      id="products"
-      class="overflow-hidden py-24 sm:py-32"
-      v-scroll-reveal
-    >
+    <!-- Services teaser (full detail lives on /services) -->
+    <section class="py-24 sm:py-32" v-scroll-reveal>
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div
-          class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center"
-        >
-          <div class="lg:pr-4 lg:pt-4">
-            <div class="max-w-lg grid gap-4">
-              <h2
-                class="mt-2 text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
-              >
-                Products
-              </h2>
-              <p
-                class="max-w-2xl text-lg font-regular text-pretty text-white/80 sm:text-2xl/9"
-              >
-                We design and build web, mobile, and desktop applications
-                in-house. The focus is on simple, usable software that addresses
-                real user needs.
-              </p>
-              <dl
-                class="mt-10 max-w-xl space-y-8 text-lg/7 text-white/80 lg:max-w-none"
-              >
-                <div
-                  v-for="product in products"
-                  :key="product.name"
-                  class="relative pl-10"
-                >
-                  <dt class="inline font-semibold text-white">
-                    <component
-                      :is="product.icon"
-                      class="absolute left-1 top-1 size-6 text-teal-400"
-                      aria-hidden="true"
-                    />
-                    <NuxtLink
-                      v-if="product.to"
-                      :to="product.to"
-                      class="hover:text-teal-400 transition"
-                    >
-                      {{ product.name }}
-                    </NuxtLink>
-                    <template v-else>{{ product.name }}</template>
-                  </dt>
-                  {{ " " }}
-                  <dd class="inline">{{ product.description }}</dd>
-                  <dd v-if="product.badge" class="mt-4">
-                    <NuxtLink
-                      v-if="product.to"
-                      :to="product.to"
-                      class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-xs text-white hover:bg-teal-500/20 transition"
-                    >
-                      {{ product.badge }}
-                    </NuxtLink>
-                    <span
-                      v-else
-                      class="inline-flex items-center rounded-full bg-[#0e0d17]/60 px-4 py-2 text-xs text-white"
-                    >
-                      {{ product.badge }}
-                    </span>
-                  </dd>
-                </div>
-              </dl>
-            </div>
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div class="max-w-2xl">
+            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              What I can help with
+            </h2>
+            <p class="mt-4 text-lg text-white/70">
+              The brand, the site, the campaigns that drive traffic, and the
+              software underneath. Usually split between suppliers, here it's one
+              studio.
+            </p>
           </div>
-          <div class="sm:px-6 lg:px-0">
-            <img
-              src="/singlio.png"
-              alt="Singlio - Focus training app"
-              class="w-full rounded-3xl"
-              loading="lazy"
-              decoding="async"
-            />
+          <NuxtLink
+            to="/services"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 hover:underline"
+          >
+            All services <ArrowRight class="size-4" />
+          </NuxtLink>
+        </div>
+        <dl class="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div v-for="s in servicesTeaser" :key="s.name" class="relative pl-14">
+            <dt class="text-lg font-bold text-white">
+              <span class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-xl bg-white/[0.06] ring-1 ring-white/10">
+                <component :is="s.icon" class="size-5 text-teal-400" aria-hidden="true" />
+              </span>
+              {{ s.name }}
+            </dt>
+            <dd class="mt-1.5 text-base text-white/70">{{ s.note }}</dd>
           </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Selected work teaser (full portfolio lives on /work) -->
+    <section class="py-24 sm:py-32" v-scroll-reveal>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Selected work</h2>
+          <NuxtLink
+            to="/work"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 hover:underline"
+          >
+            All work <ArrowRight class="size-4" />
+          </NuxtLink>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <NuxtLink
+            v-for="w in workTeaser"
+            :key="w.name"
+            to="/work"
+            class="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-teal-400/40 hover:bg-white/[0.05]"
+          >
+            <p class="text-xs font-semibold uppercase tracking-wide text-teal-400">{{ w.kind }}</p>
+            <h3 class="mt-2 text-xl font-bold text-white group-hover:text-teal-300">{{ w.name }}</h3>
+            <p class="mt-2 flex-1 text-sm text-white/60">{{ w.note }}</p>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- Client Work Section -->
-    <section class="py-24 sm:py-32" v-scroll-reveal>
+    <!-- Contact -->
+    <section id="contact" class="scroll-mt-24 py-24 sm:py-32" v-scroll-reveal>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 grid gap-4">
-        <h2
-          class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl"
-        >
-          Get in touch
+        <h2 class="text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          Start a project
         </h2>
-        <p
-          class="max-w-2xl text-lg font-regular text-pretty text-white/80 sm:text-2xl/9"
-        >
-          If you're interested in working with us, please get in touch and we'll
-          get back to you as soon as possible.
+        <p class="max-w-2xl text-lg font-regular text-pretty text-white/80 sm:text-2xl/9">
+          Tell me what you're trying to do and who it's for. I'll tell you what I
+          think your users actually need, and how I'd build up from there.
         </p>
         <div class="mt-8 grid grid-cols-1 gap-16 lg:grid-cols-2">
           <!-- Left: Contact Form -->
-          <div
-            class="sm:rounded-[2.5rem] rounded-2xl bg-[#0e0d17]/90 shadow-xl p-8 sm:p-10"
-          >
+          <div class="sm:rounded-[2.5rem] rounded-2xl bg-[#0e0d17]/90 shadow-xl p-8 sm:p-10">
             <form @submit.prevent="handleSubmit">
               <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div class="sm:col-span-2">
-                  <label
-                    for="name"
-                    class="block text-base font-semibold text-white"
-                    >Name</label
-                  >
+                  <label for="name" class="block text-base font-semibold text-white">Name</label>
                   <div class="mt-2.5">
                     <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      autocomplete="name"
-                      required
+                      type="text" name="name" id="name" autocomplete="name" required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     />
                   </div>
                 </div>
                 <div class="sm:col-span-2">
-                  <label
-                    for="email"
-                    class="block text-base font-semibold text-white"
-                    >Email</label
-                  >
+                  <label for="email" class="block text-base font-semibold text-white">Email</label>
                   <div class="mt-2.5">
                     <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      autocomplete="email"
-                      required
+                      type="email" name="email" id="email" autocomplete="email" required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     />
                   </div>
                 </div>
                 <div class="sm:col-span-2">
-                  <label
-                    for="message"
-                    class="block text-base font-semibold text-white"
-                    >Message</label
-                  >
+                  <label for="message" class="block text-base font-semibold text-white">Message</label>
                   <div class="mt-2.5">
                     <textarea
-                      id="message"
-                      name="message"
-                      rows="4"
-                      required
+                      id="message" name="message" rows="4" required
                       class="block w-full rounded-xl border-2 border-white/30 bg-transparent px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none transition"
                     ></textarea>
                   </div>
@@ -197,45 +167,26 @@
               </div>
               <div class="mt-10">
                 <button
-                  type="submit"
-                  :disabled="formStatus === 'sending'"
-                  class="block w-full rounded-xl bg-teal-500 px-3.5 py-4 text-center text-lg font-bold text-black shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 transition disabled:opacity-50"
+                  type="submit" :disabled="formStatus === 'sending'"
+                  class="block w-full rounded-xl bg-teal-500 px-3.5 py-4 text-center text-lg font-bold text-black shadow-sm transition hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 disabled:opacity-50"
                 >
-                  {{
-                    formStatus === "sending"
-                      ? "Sending..."
-                      : formStatus === "sent"
-                      ? "Sent!"
-                      : "Let's talk"
-                  }}
+                  {{ formStatus === "sending" ? "Sending..." : formStatus === "sent" ? "Sent!" : "Let's talk" }}
                 </button>
               </div>
             </form>
           </div>
-          <!-- Right: Services -->
+          <!-- Right: reassurance -->
           <div class="lg:pt-2">
-            <h3 class="text-3xl font-bold tracking-tight text-white">
-              How We Can Help
-            </h3>
+            <h3 class="text-3xl font-bold tracking-tight text-white">How it starts</h3>
             <dl class="mt-8 space-y-8 text-base/7 text-white/80">
-              <div
-                v-for="service in services"
-                :key="service.name"
-                class="relative pl-14"
-              >
-                <dt class="font-bold text-lg text-white">
-                  <span
-                    class="absolute left-0 top-0 flex h-10 w-10 mt-1 items-center justify-center rounded-full bg-[#0e0d17]/90"
-                  >
-                    <component
-                      :is="service.icon"
-                      class="size-4 text-teal-400"
-                      aria-hidden="true"
-                    />
+              <div v-for="step in intake" :key="step.name" class="relative pl-14">
+                <dt class="text-lg font-bold text-white">
+                  <span class="absolute left-0 top-0 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-[#0e0d17]/90">
+                    <component :is="step.icon" class="size-4 text-teal-400" aria-hidden="true" />
                   </span>
-                  {{ service.name }}
+                  {{ step.name }}
                 </dt>
-                <dd>{{ service.description }}</dd>
+                <dd>{{ step.description }}</dd>
               </div>
             </dl>
           </div>
@@ -246,15 +197,17 @@
 </template>
 
 <script setup>
-import { Focus, ListTodo, FolderTree, Plus, Code, Layers, Zap, Lightbulb } from "lucide-vue-next";
+import {
+  ArrowRight, Globe, Palette, TrendingUp, Target, Mail, Boxes,
+  Ear, Search, Hammer,
+} from "lucide-vue-next";
 
 useHead({
-  title: "first principles - Independent Product & Software Studio",
+  title: "first principles - UX-first Product & Software Studio",
 });
 
 const marqueeRef = ref(null);
 const marqueePaused = ref(false);
-
 let marqueeObserver = null;
 
 onMounted(() => {
@@ -266,13 +219,9 @@ onMounted(() => {
     marqueeObserver.observe(marqueeRef.value);
   }
 });
-
-onBeforeUnmount(() => {
-  marqueeObserver?.disconnect();
-});
+onBeforeUnmount(() => { marqueeObserver?.disconnect(); });
 
 const formStatus = ref("idle");
-
 async function handleSubmit(e) {
   formStatus.value = "sending";
   const data = new FormData(e.target);
@@ -306,63 +255,24 @@ const techLogos = [
   { src: "/processwire.svg", alt: "ProcessWire" },
 ];
 
-const products = [
-  {
-    name: "Singlio.",
-    description:
-      "A focus training app designed to help strengthen executive function. Centres on deliberate practice, minimal distraction, and measurable progress.",
-    icon: Focus,
-    badge: "Learn more",
-    to: "/singlio",
-  },
-  {
-    name: "AI Task Manager.",
-    description:
-      "A lightweight task management panel for VS Code. Track tasks across multiple projects using Markdown files designed to work with AI coding assistants.",
-    icon: ListTodo,
-    badge: "Learn more",
-    to: "/ai-task-manager",
-  },
-  {
-    name: "AI Context Docs.",
-    description:
-      "A VS Code extension that maintains a .context/ folder mapping your codebase for AI assistants. Auto-scans, tracks staleness, and works with any AI tool.",
-    icon: FolderTree,
-    badge: "Learn more",
-    to: "/ai-context-docs",
-  },
-  {
-    name: "More to come.",
-    description:
-      "We're always working on new tools and products. Stay tuned.",
-    icon: Plus,
-  },
+const servicesTeaser = [
+  { icon: Globe, name: "Websites", note: "New builds and refreshing older sites" },
+  { icon: Palette, name: "Branding & rebrands", note: "New brands and rebrands, done fast" },
+  { icon: TrendingUp, name: "CRO & usability", note: "Convert more of the traffic you have" },
+  { icon: Target, name: "PPC & tracking", note: "Campaigns, landing pages, analytics" },
+  { icon: Mail, name: "Email & comms", note: "Marketing and customer comms" },
+  { icon: Boxes, name: "Custom software", note: "CRMs, portals, integrations, full apps" },
 ];
 
-const services = [
-  {
-    name: "Design & Development",
-    description:
-      "End-to-end product design, UI/UX, and full-stack development for web and mobile applications.",
-    icon: Code,
-  },
-  {
-    name: "Design Systems & Components",
-    description:
-      "Scalable, consistent foundations - component libraries, design tokens, and documentation.",
-    icon: Layers,
-  },
-  {
-    name: "Prototyping & Experimentation",
-    description:
-      "Rapid prototyping, proof-of-concept builds, and A/B testing to validate ideas fast.",
-    icon: Zap,
-  },
-  {
-    name: "Product Strategy & Direction",
-    description:
-      "Early-stage product thinking, technical direction, and helping shape ideas before they scale.",
-    icon: Lightbulb,
-  },
+const workTeaser = [
+  { kind: "Rebrand", name: "Kress", note: "A ground-up rebrand: logo, brand system and Figma library, through to the live site." },
+  { kind: "PPC & landing pages", name: "Greenfields", note: "Campaign landing pages, CRM integration and ongoing paid-search support." },
+  { kind: "Product", name: "Singlio", note: "My own focus-training app, live on Google Play." },
+];
+
+const intake = [
+  { icon: Ear, name: "I listen", description: "You tell me what you're trying to do and who it's for. I ask about your customers before anything else." },
+  { icon: Search, name: "I figure out the need", description: "I work out who your users are and how they really behave, then say what I think they actually need." },
+  { icon: Hammer, name: "I build around it", description: "Design and development from there, in front of real people, sharpened from how it performs." },
 ];
 </script>

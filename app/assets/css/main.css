@@ -1,8 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* One brand gradient, shared by the knockout text (.text-mesh) and any section
+   that "resolves" into it (.reveal-bg). Both use background-attachment: fixed, so
+   the gradient is anchored to the viewport — the letters become genuine windows
+   onto the exact background a .reveal-bg section shows, and the two line up as one
+   continuous image. The deep-indigo base is a fallback so text is never invisible
+   if a browser drops background-clip + fixed. */
+:root {
+  --brand-mesh:
+    radial-gradient(58% 82% at 10% 40%, rgba(28, 190, 170, 0.92) 0%, transparent 60%),
+    radial-gradient(56% 78% at 44% 50%, rgba(214, 98, 156, 0.88) 0%, transparent 62%),
+    radial-gradient(60% 82% at 80% 38%, rgba(232, 144, 72, 0.88) 0%, transparent 62%),
+    radial-gradient(74% 84% at 60% 104%, rgba(128, 66, 178, 0.80) 0%, transparent 66%),
+    radial-gradient(84% 74% at 26% -6%, rgba(78, 48, 160, 0.82) 0%, transparent 66%);
+  --brand-mesh-base: #17112e;
+}
+
+/* Knockout / cut-out text — flat, no inner shadow; the fixed brand gradient
+   showing straight through the letters onto a light "paper" surface. */
+.text-mesh {
+  background-color: var(--brand-mesh-base);
+  background-image: var(--brand-mesh);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* A section that "resolves" the paper into the actual background — the same
+   fixed gradient the knockout letters were revealing, now filling the panel. */
+.reveal-bg {
+  background-color: var(--brand-mesh-base);
+  background-image: var(--brand-mesh);
+  background-attachment: fixed;
+}
 
 @layer base {
   html {
